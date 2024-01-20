@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Aluno</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1611/Lines_strokes_blue_background-Vector_Design_HD_Wallpaper_1920x1080.jpg);
+            background-size: cover;
+        }
+
+        h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        p {
+            color: white;
+            margin-bottom: 10px;
+            margin-left: 20px; /* Adiciona margem à esquerda */
+        }
+
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.241);
+            border-radius: 8px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.152);
+            color: white;
+        }
+
+        th {
+            background-color: #010870b4;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>HOME DO ALUNO</h2>
+    {% if aluno_selecionado %}
+        <p>NOME DO ALUNO: {{ aluno_selecionado[0][0] }}</p>
+        <p>CPF DO ALUNO: {{ aluno_selecionado[0][1] }}</p>
+    {% endif %}
+    <h2 style="margin-top: 20px; text-align: center;">BOLETIM DE NOTAS</h2>
+    {% if disciplinas_notas %}
+        <table border="1">
+            <tr>
+                <th>Disciplina</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Nota 4</th>
+                <th>Média</th>
+            </tr>
+            {% for disciplina_nota in disciplinas_notas %}
+                <tr>
+                    <td>{{ disciplina_nota[0] }}</td>
+                    <td>{{ disciplina_nota[1] }}</td>
+                    <td>{{ disciplina_nota[2] }}</td>
+                    <td>{{ disciplina_nota[3] }}</td>
+                    <td>{{ disciplina_nota[4] }}</td>
+                    <td>{{ disciplina_nota[5] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Nenhuma disciplina e nota encontrada</p>
+    {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bodyUsuario">
+    <section>
+        <form action="/gravar_alteracao_usuario" method="POST">
+            {% for usuario in usuarios %}  
+            <h1>Alterar Dados Cadastrais</h1>
+            <div class="inputbox">
+                <input type="text" name="usuario" value= {{usuario[0]}}>
+                <label for="">User</label>
+            </div>
+                <input type="text" hidden="true" name="usuario_anterior" value= {{usuario[0]}}> <!---Usado para armazenar o nome do usuário para poder fazer a alteração-->
+            <div class="inputbox">
+                <input type="password" name="senha" value= {{usuario[2]}}>
+                <label for="">Password</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="email" value= {{usuario[1]}}>
+                <label for="">Email</label>
+            </div>
+            {%endfor%}
+            <button>Register</button>
+        </form>
+    </section>
+</body>
+</html>

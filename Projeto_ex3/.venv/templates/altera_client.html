@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bodyCliente">
+    <section>
+        <form action="/gravar_alteracao_cliente" method="POST">
+            {% for cliente in cliente %}  
+            <h1>Alterar dados cadastrais</h1>
+            <div class="inputbox">
+                <input type="text" name="nome" value= {{cliente[1]}}>
+                <label for="">Nome</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="cpf" value= {{cliente[0]}}>
+                <label for="">CPF</label>
+            </div>
+            <input type="text" hidden="true" name="cpf_anterior" value= {{cliente[0]}}> <!---Usado para armazenar o nome do usuário para poder fazer a alteração-->
+            <div class="inputbox">
+                <input type="text" name="email" value= {{cliente[2]}}>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="endereco" value= {{cliente[3]}}>
+                <label for="">Endereço</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="bairro" value= {{cliente[4]}}>
+                <label for="">Bairro</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="cep" value= {{cliente[5]}}>
+                <label for="">CEP</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="cidade" value= {{cliente[6]}}>
+                <label for="">Cidade</label>
+            </div>
+            {%endfor%}
+            <button>Register</button>
+        </form>
+    </section>
+</body>
+</html>

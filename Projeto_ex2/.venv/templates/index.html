@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<link href="static/bootstrap.css" rel="stylesheet" >
+<title>Página Principal</title>
+<body>
+    <h1>{{titulo}}</h1>
+    <form action="/login" method="post"> <!--Vincula o formulário à rota "login"-->
+        <div class="mb-3 mt-3">
+            <label>Login</label><input type="text" name="login"> <!--Iremos precisar do atributo name-->
+            <label>Senha</label> <input type="password" name="senha"> 
+            <input class="btn btn-primary" type="submit" value="Logar"> <!--Submete (enviar) esse formulário para a rota "/login"-->
+        </div>
+    </form>
+</body>
+</html>

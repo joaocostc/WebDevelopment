@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculdade Fictícia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url(https://west1.com.br/wp-content/uploads/2018/08/Main-banners-1920x1080px-IRE-Dublin1-1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .link-container {
+            display: flex;
+            gap: 10px; /* Ajuste este valor conforme necessário para o espaçamento desejado */
+            margin-bottom: 10px;
+        }
+
+        .aAluno, .aSecretaria {
+            display: inline-block;
+            width: 150px;
+            height: 210px;
+            text-align: center;
+            text-decoration: none;
+            color: #000000;
+            background-color: none;
+            border: 1px solid none;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 350px;
+            vertical-align: middle;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            background-size: 60%;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .aAluno {
+            background-image: url('https://cdn-icons-png.flaticon.com/128/3044/3044129.png');
+        }
+
+        .aSecretaria {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/6319/6319879.png');
+        }
+
+        .aAluno:hover, .aSecretaria:hover {
+            background-color: #6f6f6f93;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="link-container">
+        <a href="/login_aluno" class="aAluno">Aluno</a>
+        <a href="/login_gestao" class="aSecretaria">Secretaria</a>
+    </div>
+</body>
+
+</html>

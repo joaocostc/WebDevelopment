@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Secretaria Acadêmica</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1611/Lines_strokes_blue_background-Vector_Design_HD_Wallpaper_1920x1080.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .link-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .link-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        a {
+            display: inline-block;
+            width: 150px;
+            height: 210px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: none;
+            border: 1px solid none;
+            border-radius: 5px;
+            font-size: 16px;
+            vertical-align: middle;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            background-size: 60%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 10px;
+        }
+
+        a:hover {
+            background-color: #6f6f6f93;
+        }
+
+        .link-aluno {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2387/2387645.png');
+        }
+
+        .link-secretaria {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/554/554744.png');
+        }
+
+        .link-disciplina {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/29/29302.png');
+        }
+
+        .link-nota {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/82/82071.png');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="link-container">
+        <div class="link-column">
+            <a href="/cadastro_aluno" class="link-aluno"> Cadastrar Alunos</a>
+            <a href="/cadastro_secretaria" class="link-secretaria">Cadastrar Funcionários</a>
+        </div>
+        <div class="link-column">
+            <a href="/cadastro_disciplina" class="link-disciplina">Cadastrar Disciplinas</a>
+            <a href="/cadastro_nota" class="link-nota">Cadastrar Notas</a>
+        </div>
+    </div>
+</body>
+
+</html>

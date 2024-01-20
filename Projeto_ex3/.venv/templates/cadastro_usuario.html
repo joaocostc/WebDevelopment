@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bodyUsuario">
+    <section>
+        <form action="/processar_usuario" method="POST">
+            <h1>User Register</h1>
+            <div class="inputbox">
+                <input type="text" name="usuario" required>
+                <label for="">User</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="senha" required>
+                <label for="">Password</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="email" required>
+                <label for="">Email</label>
+            </div>
+            <button>Register</button>
+        </form>
+    </section>
+    <table class="tabela" border="1">
+        <caption>Usuários Cadastrados</caption>
+        <tr> <!---Para criar linha-->
+            <th>Usuário</th> <!---Para criar o cabeçalho (head)-->
+            <th>Email</th> <!---Para criar o cabeçalho (head)-->
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario[0]}}</td> <!---Cria uma nova coluna-->
+            <td>{% if usuario[1] is not none %}
+                {{usuario[1] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>
+                <a href={{ url_for("excluir_usuario", usuario=usuario[0])}}>Excluir</a>
+                <!--Cria para mim um link para esta rota excluir_usuario-->
+            </td>
+            <td>
+                <a href={{ url_for("alterar_usuario", user=usuario[0])}}>Alterar</a>
+                <!--Cria para mim um link para esta rota excluir_usuario-->
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

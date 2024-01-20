@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="tabela" border="1">
+        <caption>Usuários Cadastrados</caption>
+        <tr> <!---Para criar linha-->
+            <th>CPF</th> <!---Para criar o cabeçalho (head)-->
+            <th>Nome</th> <!---Para criar o cabeçalho (head)-->
+        </tr>
+        {% for cpf in cpfs %}
+        <tr>
+            <td>{{cpf[0]}}</td> 
+            <td>{% if cpf[1] is not none %}
+                {{cpf[1] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>
+                <a href={{ url_for("excluir_aluno", cpf=cpf[0])}}>Excluir</a>
+                <!--Cria para mim um link para esta rota excluir_usuario-->
+            </td>
+            <td>
+                <a href={{ url_for("alterar_aluno", cpf=cpf[0])}}>Alterar</a>
+                <!--Cria para mim um link para esta rota excluir_usuario-->
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

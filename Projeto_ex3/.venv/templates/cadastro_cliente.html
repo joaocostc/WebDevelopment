@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body class="bodyCliente">
+    <section>
+        <form action="/processar_cliente" method="POST">
+            <h1>Client Register</h1>
+            <div class="inputbox">
+                <input type="text" name="nome" required>
+                <label for="">Nome</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="cpf" required>
+                <label for="">CPF</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="email" required>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="endereco" required>
+                <label for="">Endereço</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="bairro" required>
+                <label for="">Bairro</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="cep" required>
+                <label for="">CEP</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="cidade" required>
+                <label for="">Cidade</label>
+            </div>
+            <button>Register</button>
+        </form>
+    </section>
+    <table class="tabela" border="1">
+        <caption>Clientes Cadastrados</caption>
+        <tr> <!---Para criar linha-->
+            <th>CPF</th> <!---Para criar o cabeçalho (head)-->
+            <th>Nome</th> <!---Para criar o cabeçalho (head)-->
+            <th>Email</th>
+            <th>Endereço</th>
+            <th>Bairro</th>
+            <th>CEP</th>
+            <th>Cidade</th>
+        </tr>
+        {% for cpf in cpfs %}
+        <tr>
+            <td>{{cpf[0]}}</td>
+            <td>{% if cpf[1] is not none %}
+                {{cpf[1] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>{% if cpf[2] is not none %}
+                {{cpf[2] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>{% if cpf[3] is not none %}
+                {{cpf[3] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>{% if cpf[4] is not none %}
+                {{cpf[4] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>{% if cpf[5] is not none %}
+                {{cpf[5] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>{% if cpf[6] is not none %}
+                {{cpf[6] }}
+                {% else %}
+                Vazio
+                {%endif%}
+            </td>
+            <td>
+                <a href={{ url_for("excluir_cliente", cliente=cpf[0])}}>Excluir</a>
+            </td>
+            <td>
+                <a href={{ url_for("alterar_cliente", cliente=cpf[0])}}>Alterar</a>
+                <!--Cria para mim um link para esta rota excluir_usuario-->
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>
